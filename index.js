@@ -13,19 +13,21 @@ fetch(
     document.getElementById("author").textContent = `By: Dodi Achmad`;
   });
 
-fetch("https://api.adviceslip.com/advice")
+fetch("https://icanhazdadjoke.com/", {
+  headers: { Accept: "application/json" },
+})
   .then((res) => res.json())
   .then((data) => {
     console.log(data);
     document.getElementById("quote").innerHTML = `
-    <span class="quote-title">Some Words of Wisdom</span>
-    <p>${data.slip.advice}</p>
+    <span class="quote-title">You're in for a joke</span>
+    <p>${data.joke.charAt(0).toUpperCase() + data.joke.slice(1)}</p>
     `;
   })
   .catch((err) => {
     document.getElementById("quote").innerHTML = `
-    <span class="quote-title">Some Words of Wisdom</span>
-    <p>Take a short break and stretch.</p>`;
+    <span class="quote-title">You're in for a joke</span>
+    <p>Or are you?</p>`;
   });
 
 fetch("https://api.frankfurter.dev/v2/rates?base=EUR&quotes=USD,GBP,CHF")
