@@ -10,7 +10,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   text-shadow: 0px 0px 20px #242424;
 }
 
@@ -29,6 +29,8 @@ div.top {
 
 h1.time {
   text-align: center;
+  font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+  font-weight: 700;
   font-size: 6rem;
   text-decoration: underline overline;
   text-decoration-color: white;
@@ -52,6 +54,9 @@ div#crypto-top {
 
 div#crypto-top > span {
   margin-left: 10px;
+}
+div#crypto-top > img {
+  width: 150px;
 }
 
 div#weather {
@@ -90,7 +95,7 @@ div#time-container {
 }
 
 div#quote {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   text-align: center;
   margin-top: 100px;
   width: 40%;
@@ -98,12 +103,17 @@ div#quote {
   color: rgb(232, 232, 232);
   border-radius: 20px;
   padding: 10px 60px;
+  
+}
+
+div#quote > p {
+  
   font-style: italic;
 }
 
 span.quote-title {
   padding-top: 10px;
   display: block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }

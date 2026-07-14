@@ -28,7 +28,7 @@ fetch("https://api.adviceslip.com/advice")
     <p>Take a short break and stretch.</p>`;
   });
 
-fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+fetch("https://api.frankfurter.dev/v2/rates?base=EUR&quotes=USD,GBP,CHF")
   .then((res) => {
     if (!res.ok) {
       throw Error("Something went wrong");
@@ -36,14 +36,15 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
     return res.json();
   })
   .then((data) => {
+    console.log(data);
     document.getElementById("crypto-top").innerHTML = `
-            <img src=${data.image.small} />
-            <span>${data.name}</span>
+            <img src="currency-compare.svg" alt="EUR vs USD, GBP, CHF" />         
         `;
     document.getElementById("crypto").innerHTML += `
-            <p>🎯: $${data.market_data.current_price.usd}</p>
-            <p>👆: $${data.market_data.high_24h.usd}</p>
-            <p>👇: $${data.market_data.low_24h.usd}</p>
+            <p>${data[0].base} vs</p>
+            <p>${data[2].quote}: ${data[2].rate}</p>
+            <p>${data[1].quote}: ${data[1].rate}</p>
+            <p>${data[0].quote}: ${data[0].rate}</p>
         `;
   })
   .catch((err) => console.error(err));
