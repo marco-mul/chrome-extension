@@ -69,7 +69,7 @@ fetch(
       document.getElementById("story").innerHTML = `
             <h2>${data.results[randomIndex].title}</h2>
             <p>${data.results[randomIndex].abstract}</p>
-            <button id="story-link">Read more on The New York Times</button>
+            <button id="story-link"><img id="nyt-logo" src="nyt-logo.png" alt="NYT" /> Read More</button>
         `;
       document.getElementById("story-link").addEventListener("click", () => {
         window.open(data.results[randomIndex].url, "_blank");
